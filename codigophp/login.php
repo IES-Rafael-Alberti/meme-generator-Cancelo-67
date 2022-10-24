@@ -1,33 +1,30 @@
 <?php
 if(isset($_POST['nombre'])) {
    require("conecta.php");
-
+  
     // recupera los datos del formulario
     $nombre = $_POST["nombre"];
     $password = $_POST["password"];
    
     // prepara la sentencia SQL. Le doy un nombre a cada dato del formulario 
-    $sql = "INSERT INTO usuario (nombre,password) VALUES (:nombre,:password)";
+    $sql = "SELECT * FROM usuario WHERE nombre = :nombre AND password = :password";
     // asocia valores a esos nombres
     $datos = array("nombre" => $nombre,
-                   "password" => $password,
+                   "password" => $password
                   );
     // comprueba que la sentencia SQL preparada está bien 
     $stmt = $conn->prepare($sql);
     // ejecuta la sentencia usando los valores
-    if($stmt->execute($datos) != 1) {
-        print("No se pudo dar de alta");
+    $stmt->execute($datos);
+    if($stmt->rowCount() == 1) {
+        session_start();
+        $_SESSION["nombre"] = $nombre;
+        session_write_close();
+        header("Location: index.php");
         exit(0);
     }
-    //if($stmt->rowCount() == 1) {
-    //    session_start();
-    //    $_SESSION["nombre"] = $nombre;
-    //    session_write_close();
-    //    header("Location: index.php");
-    //    exit(0);
-    //}
-    //header("Location: login.php");
-    //exit(0);
+    header("Location: login.php");
+    exit(0);
 }
 ?>
 
@@ -37,15 +34,15 @@ if(isset($_POST['nombre'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meme Generator - Register</title>
+    <title>Meme - Login</title>
 </head>
 <body>
 <form action="" method="post" enctype="multipart/form-data">
     <label for="usuario">Nombre: </label>
     <input type="text" name="nombre" id="nombre">
-    <label for="password">password: </label>
+    <label for="password">Password: </label>
     <input type="password" name="password" id="password">
-    <input type="submit" value="Registrarse">
+    <input type="submit" value="Login">
 </form>    
 </body>
 </html>
