@@ -12,7 +12,7 @@ if(isset($_POST['nombre'])) {
     $datos = array("nombre" => $nombre,
                    "password" => $password
                   );
-    // comprueba que la sentencia SQL preparada está bien 
+    // comprueba que la sentencia SQL preparada está bien
     $stmt = $conn->prepare($sql);
     // ejecuta la sentencia usando los valores
     $stmt->execute($datos);
@@ -20,7 +20,7 @@ if(isset($_POST['nombre'])) {
         session_start();
         $_SESSION["nombre"] = $nombre;
         session_write_close();
-        header("Location: index.php");
+        header("Location: listadomemes.php");
         exit(0);
     }
     header("Location: login.php");

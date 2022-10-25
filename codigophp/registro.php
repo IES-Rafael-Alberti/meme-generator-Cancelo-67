@@ -19,15 +19,6 @@ if(isset($_POST['nombre'])) {
         print("No se pudo dar de alta");
         exit(0);
     }
-    //if($stmt->rowCount() == 1) {
-    //    session_start();
-    //    $_SESSION["nombre"] = $nombre;
-    //    session_write_close();
-    //    header("Location: index.php");
-    //    exit(0);
-    //}
-    //header("Location: login.php");
-    //exit(0);
 }
 ?>
 

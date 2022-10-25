@@ -25,6 +25,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <title>Página principal</title>
 </head>
 <body>
@@ -32,8 +33,8 @@
         if($data["success"]) {
             //iterates over memes array
             foreach($data["data"]["memes"] as $meme) {
-                //show meme image
-                echo "<input type='radio' id=". $meme['id']." name = 'meme'><img width='100px' src='" . $meme["url"] . "'>";
+                //show meme image 
+                echo "<a href='editarmeme.php?id=". $meme['id']."&url=".$meme['url']."&cajas=".$meme['box_count']."'><img width='100px' src='" . $meme["url"] ."'>";
             }
     }
     ?>
