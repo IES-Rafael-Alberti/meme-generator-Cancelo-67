@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página principal</title>
-</head>
-<body>
-    <a href="phpinfo.php">phpinfo()</a>
-    <a href="xdebug_info.php">xdebug_info()</a>
-</body>
-</html>
+<?php
+require("conecta.php");
+
+session_start();
+$idusuario = $_SESSION["id"];
+session_write_close();
+
+$sql = "SELECT * FROM meme WHERE id_usuario = :idusuario";
+
+$stmt = $conn->prepare($sql);
+$stmt->bindParam(":idusuario",$_SESSION["id"]);
+$stmt->execute();
+$memes = $stmt -> fetchAll();
+foreach ($memes as $meme ){
+    echo "<img src='" . $meme["ruta"] . "'>";
+}

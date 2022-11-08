@@ -16,13 +16,13 @@ La entrega será a través del pull request de este repositorio.
 Es importante incluir un archivo .sql con las sentencias para crear las tablas y datos necesarios para el funcionamiento correcto de la aplicación.  
 
 #### Items de evaluación:
-###### OBLIGATORIOS:  
-- [ ] Registro Usuarios  
-- [ ] Login/logout  
-- [ ] Control de sesión de usuario  
-- [ ] Creación de memes  
-	- [ ] Listado de memes disponibles  
-	- [ ] Ajuste de literales según el meme  
+###### OBLIGATORIOS:
+- [ ] Registro Usuarios
+- [ ] Login/logout
+- [ ] Control de sesión de usuario
+- [ ] Creación de memes
+	- [ ] Listado de memes disponibles
+	- [ ] Ajuste de literales según el meme
 	- [ ] Visualización de la imagen generada  
 - [ ] Listado de memes creados por un usuario
 
@@ -37,13 +37,13 @@ Es importante incluir un archivo .sql con las sentencias para crear las tablas y
 2. Entrega: 31/10/2022
 
 #### Ejemplos de código usando API:
-[Obtener listado de memes](codigophp/ejemplos/recibir-json.php)  
-[Crear un meme](codigophp/ejemplos/peticion-post.php)  
+[Obtener listado de memes](codigophp/ejemplos/recibir-json.php)
+[Crear un meme](codigophp/ejemplos/peticion-post.php)
 
 #### Ejemplos de código usando librería GD:
-[Subir una imagen](codigophp/ejemplos/sube-imagen.php)   
-[Subida archivos w3Schools](https://www.w3schools.com/php/php_file_upload.asp)   
-[Devolver una imagen con texto](codigophp/ejemplos/imagen-mod.php)   
-[Usar imagen modificada](codigophp/ejemplos/muestra-imagen.php)  
+[Subir una imagen](codigophp/ejemplos/sube-imagen.php)
+[Subida archivos w3Schools](https://www.w3schools.com/php/php_file_upload.asp)
+[Devolver una imagen con texto](codigophp/ejemplos/imagen-mod.php)
+[Usar imagen modificada](codigophp/ejemplos/muestra-imagen.php)
  
 
