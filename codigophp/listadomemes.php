@@ -26,15 +26,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    <title>Página principal</title>
+    <title>Listado de Memes</title>
 </head>
 <body>
+    <a href="logout.php"><span>Cerrar Sesion</span></a>
     <?php
         if($data["success"]) {
             //iterates over memes array
             foreach($data["data"]["memes"] as $meme) {
                 //show meme image 
-                echo "<a href='editarmeme.php?id=". $meme['id']."&url=".$meme['url']."&cajas=".$meme['box_count']."'><img width='100px' src='" . $meme["url"] ."'>";
+                echo "<a href='editarmeme.php?id=". $meme['id']."&url=".$meme['url']."&cajas=".$meme['box_count']."&nombrememe=".$meme['name']."'><img width='100px' src='" . $meme["url"] ."'>";
             }
     }
     ?>

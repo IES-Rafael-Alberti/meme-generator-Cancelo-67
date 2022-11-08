@@ -19,6 +19,7 @@ if(isset($_POST['nombre'])) {
         print("No se pudo dar de alta");
         exit(0);
     }
+    header("Location: login.php");
 }
 ?>
 
